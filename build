@@ -34,7 +34,6 @@ input_dir=$(realpath "$(dirname "$file")")
 
 tmp=$(mktemp -d /tmp/uw-letterhead-XXXXXXXXXX)
 pandoc "$file" -o "$tmp/body.tex"
-pushd "$tmp" 1>/dev/null
 for template_file in uw-logo.pdf midtilde.sty uw-cs-letterhead.cls; do
   cp "$DIR/$template_file" "$tmp/"
 done
@@ -42,7 +41,8 @@ done
 filebase=$(basename "$file")
 filebase=${filebase%.*}
 cat "$DIR/_preamble.tex" "$tmp/body.tex" "$DIR/_postamble.tex" > "$tmp/$filebase.tex"
+pushd "$tmp" 1>/dev/null
 ~/sw/latexrun/latexrun "$filebase.tex"
-cp "$tmp/$filebase.pdf" "$input_dir/"
 popd 1>/dev/null
+cp "$tmp/$filebase.pdf" "$input_dir/"
 rm -r "$tmp"
