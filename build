@@ -4,25 +4,8 @@ set -eu
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-blue=$(tput setaf 4 || printf "")
-green=$(tput setaf 2 || printf "")
-red=$(tput setaf 1 || printf "")
-reset=$(tput sgr0 || printf "")
-
-info() {
-  echo -e "${blue}$1${reset}"
-}
-
-error() {
-  echo -e "${red}$1${reset}" 1>&2
-}
-
-good() {
-  echo -e "${green}$1${reset}" 1>&2
-}
-
 usage() {
-  error "Usage: $0 <markdown file>"
+  echo "Usage: $0 <markdown file>" 1>&2
 }
 
 if [ $# -lt 1 ]; then
