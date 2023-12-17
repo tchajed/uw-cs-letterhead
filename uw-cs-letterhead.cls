@@ -32,7 +32,7 @@
 %  footer
 %
 
-\newcommand{\uw@mailto}[1]{\href{mailto:#1@cs.wisc.edu}{#1@cs.wisc.edu}}
+\newcommand{\uw@mailto}[1]{\href{mailto:#1@wisc.edu}{#1@wisc.edu}}
 
 \newcommand{\uw@footer}[0]{
   \begin{minipage}[b]{\textwidth}
@@ -50,12 +50,8 @@
     1210 W. Dayton Street \quad
     Madison, Wisconsin 53706
 
-    \href{tel:+1-(608)-26\uw@extension}{608/26\uw@extension} \quad
-    Fax: \href{fax:+1-(608)-262-9777}{608/262-9777} \quad
-    E-mail: \uw@mailto{\ifcsempty{uw@username}{chair}{\uw@username}} \quad
-    \ifcsempty{uw@username}{%
-      \href{http://www.cs.wisc.edu/}{www.cs.wisc.edu}}{%
-      \href{http://pages.cs.wisc.edu/~\uw@username/}{pages.cs.wisc.edu/\midtilde\uw@username}}
+    Email: \uw@mailto{\ifcsempty{uw@username}{chair}{\uw@username}} \quad
+    Website: \href{https://chajed.io}{https://chajed.io}
   \end{minipage}}
 
 \fancypagestyle{firstpage}{%
