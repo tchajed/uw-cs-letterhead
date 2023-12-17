@@ -13,6 +13,22 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  --help | -help | -h)
+    usage
+    exit 0
+    ;;
+  -*)
+    usage
+    exit 1
+    ;;
+  *)
+    break
+    ;;
+  esac
+done
+
 file="$1"
 input_dir=$(realpath "$(dirname "$file")")
 
