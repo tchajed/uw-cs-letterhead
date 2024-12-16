@@ -8,6 +8,7 @@
 
 \DeclareBoolOption{preprinted}
 \DeclareStringOption{username}
+\DeclareStringOption{website}
 \DeclareStringOption[2-1204]{extension}
 
 \DeclareDefaultOption{%
@@ -51,7 +52,7 @@
     Madison, Wisconsin 53706
 
     Email: \uw@mailto{\ifcsempty{uw@username}{chair}{\uw@username}} \quad
-    Website: \href{https://chajed.io}{https://chajed.io}
+    Website: \href{\uw@website}{\uw@website}
   \end{minipage}}
 
 \fancypagestyle{firstpage}{%
