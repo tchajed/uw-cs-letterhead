@@ -1,12 +1,6 @@
 *~
 .sconsign.dblite
 auto
-example.aux
-example.dvi
-example.fls
-example.log
-example.out
-example.pdf
-example.ps
-example.synctex.gz
+!example.pdf
+*.pdf
 /latex.out/
