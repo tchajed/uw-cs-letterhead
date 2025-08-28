@@ -2,7 +2,7 @@
 
 set -eu
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 usage() {
   echo "Usage: $0 <markdown file>" 1>&2
@@ -40,9 +40,9 @@ done
 
 filebase=$(basename "$file")
 filebase=${filebase%.*}
-cat "$DIR/_preamble.tex" "$tmp/body.tex" "$DIR/_postamble.tex" > "$tmp/$filebase.tex"
+cat "$DIR/_preamble.tex" "$tmp/body.tex" "$DIR/_postamble.tex" >"$tmp/$filebase.tex"
 pushd "$tmp" 1>/dev/null
-~/sw/latexrun/latexrun "$filebase.tex"
+"$DIR/latexrun" "$filebase.tex"
 popd 1>/dev/null
 cp "$tmp/$filebase.pdf" "$input_dir/"
 rm -r "$tmp"
