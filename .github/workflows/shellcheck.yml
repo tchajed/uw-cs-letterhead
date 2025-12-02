@@ -31,8 +31,8 @@ jobs:
           shfmt --diff --indent=2 build
 
       - name: Run shellcheck
-        uses: ludeeus/action-shellcheck@master
+        uses: ludeeus/action-shellcheck@v2
         with:
-          scandir: "."
+          additional_files: "build"
           check_together: "yes"
           severity: "warning"
