@@ -44,23 +44,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Setup TeX Live
-        uses: zauguin/install-texlive@v3
-        with:
-          packages: >
-            scheme-basic
-            kvoptions
-            etoolbox
-            fancyhdr
-            geometry
-            graphics
-            hyperref
-            glossaries
-
       - name: Install pandoc
         run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc
+          sudo apt-get update -y
+          sudo apt-get install -y pandoc texlive-latex-recommended
 
       - name: Build example.md
         run: ./build example.md
