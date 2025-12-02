@@ -48,7 +48,7 @@
     \fontsize{10}{12}\selectfont
     %
     University of Wisconsin--Madison \quad
-    1210 W. Dayton Street \quad
+    1205 University Ave \quad
     Madison, Wisconsin 53706
 
     Email: \uw@mailto{\ifcsempty{uw@username}{chair}{\uw@username}} \quad
