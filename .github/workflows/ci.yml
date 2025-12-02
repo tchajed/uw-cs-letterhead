@@ -1,16 +1,16 @@
-name: Lint
+name: CI
 
 on:
   push:
     branches: [master]
     paths:
       - "build"
-      - ".github/workflows/shellcheck.yml"
+      - ".github/workflows/ci.yml"
   pull_request:
     branches: [master]
     paths:
       - "build"
-      - ".github/workflows/shellcheck.yml"
+      - ".github/workflows/ci.yml"
 
 jobs:
   shellcheck:
@@ -36,3 +36,16 @@ jobs:
           additional_files: "build"
           check_together: "yes"
           severity: "warning"
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup TeX Live
+        uses: xu-cheng/texlive-action@v3
+
+      - name: Build example.md
+        run: ./build example.md
