@@ -46,7 +46,7 @@ process_file() {
   filebase=${filebase%.*}
   cat "$DIR/_preamble.tex" "$tmp/body.tex" "$DIR/_postamble.tex" >"$tmp/$filebase.tex"
   pushd "$tmp" 1>/dev/null
-  "$DIR/latexrun" "$filebase.tex"
+  "$DIR/latexrun" -W no-glossaries --makeglossaries-args='-q' "$filebase.tex"
   popd 1>/dev/null
   cp "$tmp/$filebase.pdf" "$input_dir/"
   rm -r "$tmp"
