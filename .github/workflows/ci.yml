@@ -44,7 +44,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Install pandoc
+      - name: Install pandoc and latex
         run: |
           sudo apt-get update -y
           sudo apt-get install -y pandoc texlive-latex-recommended
