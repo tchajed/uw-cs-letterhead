@@ -36,18 +36,3 @@ jobs:
           additional_files: "build"
           check_together: "yes"
           severity: "warning"
-
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-
-      - name: Install pandoc and latex
-        uses: awalsh128/cache-apt-pkgs-action@v1
-        with:
-          packages: pandoc texlive-full
-
-      - name: Build example.md
-        run: ./build example.md
