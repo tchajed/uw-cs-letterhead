@@ -14,10 +14,17 @@
     linkcolor=blue,
     urlcolor=blue,
   }
-\usepackage{kantlipsum}
 
+% pandoc uses this for markdown lists
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% suppress glossary-related warnings
+\usepackage[nomain]{glossaries}
+\makeglossaries
+
+% only to support example file
+\usepackage{kantlipsum}
 
 \begin{document}
 
