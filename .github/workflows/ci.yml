@@ -55,6 +55,7 @@ jobs:
             geometry
             graphics
             hyperref
+            glossaries
 
       - name: Install pandoc
         run: |
